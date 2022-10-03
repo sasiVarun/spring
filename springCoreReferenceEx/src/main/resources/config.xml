@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!-- Creating Bean for Organization and providing values for Organization members-->
+    <bean id="organizationOb" class="springBeans.Organization">
+    	<property name="organizationName" value="Meta"/>
+    	<property name="organizationArea" value="Hyderabad"/>
+    </bean>
+    
+    <!-- Creating Bean for Department and providing values for Department members -->
+    <bean id="departmentOb" class="springBeans.Department">
+    	<property name="departmentId" value="D100"/>
+    	<property name="departmentName" value="Software"/>
+    	<!-- organization property is of type Organization so providing above created organizationOb reference -->
+    	<property name="organization" ref="organizationOb"/>    	
+    </bean>
+    
+    <!-- Creating Bean for Employee and providing values for Employee members -->
+    <bean id="employeeOb" class="springBeans.Employee">
+    	<property name="employeeName" value="Sasi"/>
+    	<property name="employeeId" value="E2128"/>
+    	<!-- department property is of type Department so providing above created departmentOb reference -->
+    	<property name="department" ref="departmentOb"/>
+    </bean>
+</beans>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="organization" class="com.test.Organization" p:orgName="CG"/>
+	
+    <bean id="department" class="com.test.Department" autowire="byType">
+    	<property name="departmentId" value="D107"/>
+    	<property name="departmentName" value="Software"/>
+    </bean>
+    <bean id="department1" class="com.test.Department" autowire="byType">
+    	<property name="departmentId" value="D108"/>
+    	<property name="departmentName" value="Technical"/>
+    </bean>
+    
+    <bean id="employee" class="com.test.Employee" autowire="byType">
+    	<property name="empId" value="E233"/>
+    	<property name="empName" value="James"/>
+    </bean>
+    
+</beans>

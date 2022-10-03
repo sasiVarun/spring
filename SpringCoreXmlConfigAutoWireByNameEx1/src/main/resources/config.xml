@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="pgDepartment" class="com.test.Department">
+    	<property name="departmentName" value="Science-Deparment"/>
+    	<property name="departmentId" value="PG-D-2128"/>
+    </bean>
+    
+    <bean id="researchDepartment" class="com.test.Department">
+    	<property name="departmentName" value="Technology-Deparment"/>
+    	<property name="departmentId" value="RSh-D-344"/>
+    </bean>
+    
+    <bean id="pgUniversity" class="com.test.University">
+    	<property name="universityName" value="ABC-University"/>
+    	<property name="universityAddress" value="HYD"/>
+    </bean>
+    
+    <bean id="researchUniversity" class="com.test.University">
+    	<property name="universityName" value="XYZ-University"/>
+    	<property name="universityAddress" value="BNGLR"/>
+    </bean>
+    
+    <bean id="pgStudent" class="com.test.PgStudent" autowire="byName">
+    	<property name="studentName" value="Erick"/>
+    	<property name="studentId" value="PG-STU-3445"/>
+    </bean>
+    
+    <bean id="researchStudent" class="com.test.ResearchStudent" autowire="byName">
+    	<property name="studentName" value="David"/>
+    	<property name="studentId" value="RSH-STU-3445"/>
+    </bean>
+
+</beans>
